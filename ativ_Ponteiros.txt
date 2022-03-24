@@ -1,0 +1,44 @@
+Atividade de Ponteiros.
+
+Considere o trecho do código a seguir e indique qual será sua saída.
+float a = 20.8, *p, b = 15.7, *q;
+    p = &a; q = &b;
+    printf("a = %g; b = %g;\n", a, b);
+    printf("p = &a = %ld; q = &b = %ld;\n", p, q);
+    printf("&p = %ld; &q = %ld\n", p, q);
+    printf("a = %g; *p = %g;\n", a, *p);
+    printf("b = %g; *q = %g;\n", b, *q);
+    *q = *p + 2;
+    printf("a = %g; *p = %g;\n", a , *p);
+    printf("b = %g; *q = %g;\n", b, *q);
+    p = q;
+    printf("a = %g; *p = %g;\n", a, *p);
+    printf("b = %g; *q = %g;\n", b, *q);
+
+As saídas serão:
+
+a = 20.8; b = 15.7;
+p = &a = 6356748; q = &b = 6356740;
+&p = 6356744; &q = 6356736
+a = 20.8; *p = 20.8;
+b = 15.7; *q = 15.7;
+a = 20.8; *p = 20.8;
+b = 22.8; *q = 22.8;
+a = 20.8; *p = 22.8;
+b = 22.8; *q = 22.8;
+
+Considere ainda que o endereço de a é 1234, de b é 1238, de p é 1300 e o de q é 1304.
+
+As saídas serão:
+
+a = 20.8; b = 15.7;
+p = &a = 1234; q = &b = 1238;
+&p = 1300; &q = 1304;
+a = 20.8; *p = 20.8;
+b = 15.7; *q = 15.7;
+a = 20.8; *p = 20.8;
+b = 22.8; *q = 22.8;
+a = 20.8; *p = 22.8;
+b = 22.8; *q = 22.8;
+
+Considerando que os endereços são os citados pela questão, as unicas mudanças nas saídas serão as dos endereços de a, b, p e q, já que os valores são os mesmos e não foram alterados.
